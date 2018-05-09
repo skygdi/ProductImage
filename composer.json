@@ -7,17 +7,14 @@
     },
     "autoload": {
         "psr-4": {
-            "skygdi\\product-image\\": "src/"
+            "skygdi\\ProductImage\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "skygdi\\product-image\\ProductImageProvider"
-            ],
-            "aliases": {
-                "ProductImage": "skygdi\\product-image\\MongoFacade"
-            }
+                "skygdi\\ProductImage\\ProductImageProvider"
+            ]
         }
     },
     "authors": [

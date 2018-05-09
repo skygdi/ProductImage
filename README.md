@@ -1,7 +1,7 @@
 ### Quick Product Image class (product id , name and description) base on Spatie\MediaLibrary for Laravel
 1.Install:
 ```php
-composer require skygdi/ProductImage
+composer require skygdi/product-image
 ```
 2.Public migration files:
 ```php

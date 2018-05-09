@@ -1,0 +1,29 @@
+{
+    "name": "skygdi/product-image",
+    "description": "product image",
+    "type": "library",
+    "require": {
+        "spatie/laravel-medialibrary": "^7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "skygdi\\product-image\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "skygdi\\product-image\\ProductImageProvider"
+            ],
+            "aliases": {
+                "ProductImage": "skygdi\\product-image\\MongoFacade"
+            }
+        }
+    },
+    "authors": [
+        {
+            "name": "Peter",
+            "email": "skygdi83@gmail.com"
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-### Quick paypal button deploy for Laravel
+### Quick Product Image class (product id , name and description) base on Spatie\MediaLibrary for Laravel
 1.Install:
 ```php
 composer require skygdi/ProductImage
@@ -20,7 +20,7 @@ Route::get('/', function () {
     //Creating
     ProductImage::create([
         "product_id"    =>  1,
-        "description"   =>  "kknd",
+        "description"   =>  "description",
         "sort_index"    =>  1
     ]);
     */

@@ -5,20 +5,21 @@ use Illuminate\Support\Facades\Response;
 use skygdi\ProductImage\model\ProductImage;
 
 Route::get('skygdi/pi/test', function(){
-	//echo 'Hello from the calculator package!';
-    /*
-    //Creating
-    ProductImage::create([
-        "product_id"    =>  1,
-        "description"   =>  "kknd",
-        "sort_index"    =>  1
-    ]);
-    */
+	$pi = ProductImage::find(1);
+    if( !$pi ){
+        $pi = ProductImage::create([
+            "product_id"    =>  1,
+            "description"   =>  "desc",
+            "sort_index"    =>  1
+        ]);
+        $pi->UploadImageFromUrl("https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png");    //From Internet
+    }
+    //*/
 
-    $pi = ProductImage::find(1);
+    //$pi = ProductImage::find(1);
     //$pi->UploadImage( storage_path('app/file.jpg') ); //From local file
     //$pi->UploadImage( $request->file('new_image') );  //From upload form
-    //$pi->UploadImageFromUrl("https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png");    //From Internet
+    
     echo "<img src='".url('/').$pi->ImageUrl()."'/>";
 });
 

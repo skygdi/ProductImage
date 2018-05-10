@@ -42,7 +42,7 @@ class ProductImageProvider extends ServiceProvider
     public function register()
     {
         // register our controller
-        $this->app->make('skygdi\paypal\CommonController');
+        //$this->app->make('skygdi\paypal\CommonController');
         
     }
 }

@@ -22,14 +22,28 @@ class ProductImage extends Model implements HasMedia
     	return $images[0]->getUrl();
     }
     */
+    // this is a recommended way to declare event handlers
+    protected static function boot() {
+        parent::boot();
 
+        static::deleting(function($obj) { // before delete() method call this
+            
+            $images = $obj->getMedia('images');
+            foreach( $images as $image ){
+                $image->delete();
+            }
+            // do the rest of the cleanup...
+        });
+    }
+
+    /*
     function Remove(){
     	$images = $this->getMedia('images');
     	foreach( $images as $image ){
     		$image->delete();
-    		//$images_array[] = $image->getUrl();
     	}
     }
+    */
 
     function ImageUrl(){
     	$images_array = array();

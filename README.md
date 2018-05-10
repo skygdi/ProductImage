@@ -13,8 +13,12 @@ php artisan vendor:publish --provider="skygdi\ProductImage\ProductImageProvider"
 php artisan migrate
 ```
 Change the #order_id input and #order_total value as your logic needed before clicking the paypal checkout button.
+4.Usage:
+```php
+use skygdi\ProductImage\model\ProductImage as ProductImage;
+```
 
-4. Testing: The fast test URL:  yourUrl/skygdi/pi/test, or you could write on your own.
+5. Testing: The fast test URL:  yourUrl/skygdi/pi/test, or you could write on your own.
 ```php
 Route::get('/', function () {
     //Creating

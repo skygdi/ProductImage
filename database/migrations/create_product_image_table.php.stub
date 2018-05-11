@@ -16,6 +16,7 @@ class CreateProductImageTable extends Migration
             $table->nullableTimestamps();
             $table->softDeletes();
             $table->integer('product_id');
+            $table->boolean('featured')->default(0);
             $table->text('name')->nullable();
             $table->text('description')->nullable();
             $table->smallInteger('sort_index')->default(1);

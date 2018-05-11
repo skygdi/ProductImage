@@ -1,0 +1,30 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class ProductImageTableAddFeatured extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up()
+    {
+        Schema::create('product_image', function (Blueprint $table) {
+            $table->boolean('featured')->default(0)->after('product_id');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down()
+    {
+        //Schema::dropIfExists('product_image');
+        Schema::table('product_image', function (Blueprint $table) {
+            $table->dropColumn('featured');
+        });
+        
+    }
+}

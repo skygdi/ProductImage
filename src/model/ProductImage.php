@@ -57,5 +57,12 @@ class ProductImage extends Model implements HasMedia
     	$this->addMediaFromUrl($url)->toMediaCollection('images');
     }
 
+    function Remove(){
+        $mediaItems = $this->getMedia();
+        foreach( $mediaItems as $item ){
+            $image->delete();
+        }
+    }
+
     
 }
